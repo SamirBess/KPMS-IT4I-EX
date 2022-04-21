@@ -6,12 +6,6 @@ dir = "/scratch/project/dd-21-42/data/mnist/"
 ## Requires kaggle log on
 ## 
 
-##
-if (!require("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-
-BiocManager::install("rhdf5")
-##
 
 library(rhdf5)
 ## read 60000 training images
