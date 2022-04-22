@@ -13,4 +13,6 @@ print(paste("Me nahode cislo od 0 do 1 je :", x))
 soucet <- reduce(x)
 finalize()
 
-print(paste(jakej, "hlasi, ze jejich soucet je ", soucet))
+#print(paste(jakej, "hlasi, ze jejich soucet je ", soucet))
+
+if (comm.rank() == 0){print{paste("Kapitan hlasi, ze jejich soucet je ", soucet)}}
