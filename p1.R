@@ -4,3 +4,5 @@ library(parallel)
 
 cat(comm.rank())
 print(comm.size())
+
+finalize()
