@@ -105,6 +105,23 @@ comm.set.seed(seed = 609, diff = FALSE)
 folds = sample( rep_len(1:nfolds, nrow(train)), nrow(train) ) ## random folds
 cv = expand.grid(par = pars, fold = 1:nfolds)  ## all combinations
 
-print(cv)
+## function for parameter combination i
+fold_err = function(i, cv, folds, train) {
+  par = cv[i, "par"]
+  fold = (folds == cv[i, "fold"])
+  models = svdmod(train[!fold, ], train_lab[!fold], pct = par)
+  predicts = predict_svdmod(train[fold, ], models)
+  sum(predicts != train_lab[fold])
+}
+
+## apply fold_err() over parameter combinations
+cv_err = mclapply(1:nrow(cv), fold_err, cv = cv, folds = folds, train = train,
+                  mc.cores = fork_cores)
+
+primt(cv_err)
+
+## sum fold errors for each parameter value
+
+#cv_err_par = tapply(unlist(cv_err), cv[, "par"], sum)
 
 finalize()
