@@ -11,4 +11,4 @@ echo "loaded R"
 # Fix for warnings from libfabric/1.12 bug
 module swap libfabric/1.12.1-GCCcore-10.3.0 libfabric/1.13.2-GCCcore-11.2.0 
 
-time mpirun -np 8 Rscript p1.R
+time mpirun -np 10 Rscript p1.R
