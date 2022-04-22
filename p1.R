@@ -10,9 +10,7 @@ print(paste("Ahoj, jmenuji se Empi", jakej, "jsem jeden z ", kolik, "identickych
 x <- runif(1)
 
 print(paste("Me nahode cislo od 0 do 1 je :", x))
-
 soucet <- reduce(x)
-
 finalize()
 
-print(paste("Jejich soucet je ", soucet))
+print(paste(jakej, "hlasi, ze jejich soucet je ", soucet))
