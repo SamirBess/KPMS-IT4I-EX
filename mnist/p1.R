@@ -81,11 +81,6 @@ suppressMessages(library(parallel))
 source("../mnist/mnist_read.R")
 source("../code/flexiblas_setup.r")
 
-blas_threads = as.numeric(commandArgs(TRUE)[2])
-fork_cores = as.numeric(commandArgs(TRUE)[3])
-setback("OPENBLAS")
-setthreads(blas_threads)
-
 #blas_threads = as.numeric(commandArgs(TRUE)[2])
 #fork_cores = as.numeric(commandArgs(TRUE)[3])
 #setback("OPENBLAS")
