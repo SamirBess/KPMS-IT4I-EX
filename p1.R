@@ -11,8 +11,6 @@ x <- runif(1)
 
 print(paste("Me nahode cislo od 0 do 1 je :", x))
 
-soucet <- gather(x)
-finalize()
+soucet <- reduce(x, op = +)
 
-print(paste("Jejich soucet je ",sum(soucet)))
-print(paste("Vektor nahodnych cisel :", soucet))
+print(paste("Jejich soucet je ", soucet))
