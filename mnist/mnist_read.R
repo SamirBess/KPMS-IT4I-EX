@@ -6,6 +6,7 @@ dir = "/scratch/project/dd-21-42/data/mnist/"
 ## Requires kaggle log on
 ## 
 
+
 library(rhdf5)
 ## read 60000 training images
 h5tr = H5Fopen(paste0(dir, "train.hdf5"), flags="H5F_ACC_RDONLY")
