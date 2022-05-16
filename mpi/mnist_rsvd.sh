@@ -13,4 +13,12 @@ echo "loaded R"
 
 ## --args blas fork
 #time Rscript mnist_rsvd.R --args 64 64 64
-time Rscript mnist_rsvd.R 64 64 64
+time Rscript mnist_rsvd.R 1
+time Rscript mnist_rsvd.R 2
+time Rscript mnist_rsvd.R 4
+time Rscript mnist_rsvd.R 8
+time Rscript mnist_rsvd.R 16
+time Rscript mnist_rsvd.R 32
+time Rscript mnist_rsvd.R 64
+time Rscript mnist_rsvd.R 128
+time Rscript mnist_rsvd.R 256
