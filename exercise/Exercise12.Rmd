@@ -1,0 +1,24 @@
+---
+title: "Exercise 12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Produce a scaling graph for the `mnist_rsvd.R` code.
+
+*Due date:* May 18
+
+*Optional:* Use the `rsvd()` algorithm in the `mnist_svd_cv_mpi.R` code for the basis construction. Note: while you can nest *fork* parallelization inside *MPI*, you can not nest *MPI* inside *fork*. But you can nest OpenBLAS multithreading inside ScaLAPACK's MPI.
+
+
+**Notes:**
+
+Next lecture is May 18, in-person. In the meantime, I am available for questions about the above exercise via emal at `gostrouc@utk.edu`, and will post the answers here so that everyone benefits.
+
+**Note1**
+
+What is a scaling graph for a parallel code? 
+
+It shows how the run time of a code changes as we give it more cores or nodes. An example is on slide 16 of Lecture 3.

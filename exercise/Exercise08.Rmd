@@ -86,3 +86,16 @@ But the "before" solution has one more wrinkle. The resulting `cv_err_par` can h
 
 **Note3**  
 By default, FlexiBLAS backend is OpenBLAS, which is great as that is the fast library. The default number of threads on Karolina's compute nodes appears to be 16, which is not bad for our application so it is okay to leave it alone. But we did find that for the specific application our optimum was 4 threads so taking it down a little might be beneficial. If you happen to blend mclapply fork together with MPI and this multithreading, you might even find that taking it down to 1 gives a slightly better result.
+
+**Note4**  
+In fact, the best combination seems to be FlexiBLAS as follows:  
+`source("../code/flexiblas_setup.r")`  
+`setback("OPENBLAS")`  
+`setthreads(1)`  
+and still using some `mclapply()` cores, setting them so that MPI per node times `mc.cores` equals the number of cores on a node, which is 128.
+
+So if you are using 32 MPI per node, set `mc.cores` to 4. You'll get about the same performance with 16 and 8 or 8 and 16, respectively.
+
+You may need to make sure that `flexiblas_setup.r` is in your `code` directory. If not, you may need to get it from the `RBigDATA/KPMS-IT4I-EX` repository.
+
+
