@@ -2,6 +2,7 @@
 #PBS -N mnist_rsvd
 #PBS -l select=1:mpiprocs=128
 #PBS -l walltime=00:15:00
+#PBS -q qexp
 #PBS -e mnist_rsvd.e
 #PBS -o mnist_rsvd.o
 
@@ -24,3 +25,7 @@ time mpirun --map-by ppr:2:node Rscript mnist_rsvd.R
 time mpirun --map-by ppr:4:node Rscript mnist_rsvd.R
 time mpirun --map-by ppr:8:node Rscript mnist_rsvd.R
 time mpirun --map-by ppr:16:node Rscript mnist_rsvd.R
+
+time mpirun --map-by ppr:32:node Rscript mnist_rsvd.R
+time mpirun --map-by ppr:64:node Rscript mnist_rsvd.R
+time mpirun --map-by ppr:128:node Rscript mnist_rsvd.R
