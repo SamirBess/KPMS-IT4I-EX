@@ -18,15 +18,3 @@ module swap libfabric/1.12.1-GCCcore-10.3.0 libfabric/1.13.2-GCCcore-11.2.0
 
 ## --args blas fork
 mpirun --map-by ppr:4:node Rscript mnist_rsvd.R --args 2 8
-
-#time Rscript mnist_rsvd.R 1
-#time Rscript mnist_rsvd.R 2
-#time Rscript mnist_rsvd.R 4
-#time Rscript mnist_rsvd.R 8
-#time Rscript mnist_rsvd.R 16
-#time Rscript mnist_rsvd.R 32
-#time Rscript mnist_rsvd.R 64
-#time Rscript mnist_rsvd.R 128
-#time Rscript mnist_rsvd.R 256
-
-
